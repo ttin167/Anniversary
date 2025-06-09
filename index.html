@@ -164,10 +164,11 @@
   <div class="hearts" id="hearts-container"></div>
 
   <!-- Nhạc nền -->
-  <audio id="bgMusic" autoplay loop muted>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
-  </audio>
+ <audio id="bgMusic" loop>
+  <source src="GapGoYeuDuongVaDuocBenEm-PhanManhQuynh-7061898.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ phát nhạc.
+</audio>
+
 
   <h1>Chúc mừng 500 ngày bên nhau ❤️</h1>
 
@@ -194,10 +195,13 @@
 
 <script>
   document.querySelector(".love-btn").addEventListener("click", function() {
-    const music = document.getElementById("bgMusic");
-    music.muted = false;
-    music.play();
+  const music = document.getElementById("bgMusic");
+  music.play().catch((e) => {
+    console.log("Trình duyệt chặn phát nhạc: ", e);
   });
+  showPopup(); // Gọi luôn showPopup ở đây để mở popup khi click
+});
+
 </script>
 
 
